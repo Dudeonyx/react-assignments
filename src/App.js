@@ -81,40 +81,51 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello, welcome to my first(ish) react app</h1>
-        <UserOutput>
-          It is supposed to showcase basics with some paragraphs and two-way
-          data binding
-        </UserOutput>
-        <UserOutput>
-          So I decided to do some psuedo login/logout behavior
-        </UserOutput>
-        {this.state.user.username ? null : <UserOutput>Here you go</UserOutput>}
-        <UserOutput>
-          {this.state.user.username ? this.state.user.prefix : null}
-          {this.state.user.username}
-          {this.state.user.suffix}
-        </UserOutput>
-        <form>
-          <div>
-            <label htmlFor="username">Username/Email: </label>
-            <UserInput
-              id="username"
-              changed={this.usernameChangeHandler}
-              name={this.state.user.username}
-            />
-            <Button value="Logout" click={this.logoutHandler} />
-          </div>
-        </form>
-        <label htmlFor="string">Input: </label>
-        <input
-          id="stringInput"
-          type="text"
-          onChange={this.inputChangeHandler}
-          value={this.state.myString}
-        />
-        {displayInputLength}
-        <ValidationComponent length={this.state.myString.length} />
-        {charList}
+        <section>
+          <h2>Two-Way Data Binding Assignment</h2>
+          <UserOutput>
+            It is supposed to showcase basics with some paragraphs and two-way
+            data binding
+          </UserOutput>
+          <UserOutput>
+            So I decided to do some psuedo login/logout behavior
+          </UserOutput>
+          {this.state.user.username ? null : (
+            <UserOutput>Here you go</UserOutput>
+          )}
+          <UserOutput>
+            {this.state.user.username ? this.state.user.prefix : null}
+            {this.state.user.username}
+            {this.state.user.suffix}
+          </UserOutput>
+          <form>
+            <div>
+              <label htmlFor="username">Username/Email: </label>
+              <UserInput
+                id="username"
+                changed={this.usernameChangeHandler}
+                name={this.state.user.username}
+              />
+              <Button value="Logout" click={this.logoutHandler} />
+            </div>
+          </form>
+        </section>
+        <section>
+          <h2>List Conditional Assignment</h2>
+          <label htmlFor="string">Input: </label>
+          <input
+            id="stringInput"
+            type="text"
+            onChange={this.inputChangeHandler}
+            value={this.state.myString}
+          />
+          {displayInputLength}
+          <ValidationComponent length={this.state.myString.length} />
+          {charList}
+          {this.state.myString.length > 0 ? (
+            <p>Click on any character above to delete it</p>
+          ) : null}
+        </section>
       </div>
     );
   }
