@@ -1,0 +1,12 @@
+.l-box {
+  display: inline-block;
+  padding: 2px;
+  margin: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.568);
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.397);
+  min-width: 0.5rem;
+  min-height: 1.3rem;
+  box-sizing: content-box;
+  vertical-align: middle;
+}
