@@ -6,7 +6,7 @@ import Button from './Button/Button';
 import ValidationComponent from './ValidationComponent/ValidationComponent';
 import CharComponent from './CharComponent/CharComponent';
 // import Label from './Label/Label';
-
+import Radium from 'radium';
 class App extends Component {
   state = {
     user: {
@@ -131,4 +131,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);

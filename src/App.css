@@ -26,3 +26,8 @@ input {
   padding: 0.3rem 3px;
   margin: 5px;
 }
+@media (min-width: 925px){
+  body {
+    padding: 0 110px;
+  }
+}
